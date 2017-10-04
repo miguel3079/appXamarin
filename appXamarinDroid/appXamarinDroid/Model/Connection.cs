@@ -41,7 +41,7 @@ namespace appXamarinDroid.Model
             ConnectionBD();
             string queryString = "SELECT * FROM Users where name = '" + user + "' and pass = '" + pass + "' and active = 1";
             MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
-            String result = string.IsNullOrWhiteSpace(sqlcmd.ExecuteScalar().ToString()) ? default(string) : sqlcmd.ExecuteScalar().ToString();
+            var result = Convert.IsDBNull(sqlcmd.ExecuteScalar()) ? default(string) : sqlcmd.ExecuteScalar().ToString();
             if (!string.IsNullOrWhiteSpace(result))
             {
                 sqlconn.Close();
