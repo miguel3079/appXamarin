@@ -18,11 +18,20 @@ namespace appXamarinDroid
 
             //Initializing button from layout
             Button login = FindViewById<Button>(Resource.Id.login);
+            EditText name = FindViewById<EditText>(Resource.Id.userName);
+            EditText pass = FindViewById<EditText>(Resource.Id.password);
 
             //Login button click action
             login.Click += (object sender, EventArgs e) => {
                 Connection connection = new Connection();
-                Android.Widget.Toast.MakeText(this, connection.GetAccountCountFromMySQL(), Android.Widget.ToastLength.Short).Show();
+                if (connection.Login(name.Text, pass.Text))
+                {
+                    Android.Widget.Toast.MakeText(this, "Dentro", Android.Widget.ToastLength.Short).Show();
+                }
+                else
+                {
+                    Android.Widget.Toast.MakeText(this, "Error de usuario y contraseña", Android.Widget.ToastLength.Short).Show();
+                }
             };
         }
     }

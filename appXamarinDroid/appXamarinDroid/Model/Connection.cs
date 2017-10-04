@@ -15,27 +15,43 @@ namespace appXamarinDroid.Model
 {
     public class Connection
     {
-        private string GetAccountCountFromMySQL()
+        MySqlConnection sqlconn;
+        Validations.Validations validations;
+
+        public Connection()
+        {
+            validations = new Validations.Validations();
+        }
+
+        private void ConnectionBD()
         {
             try
             {
-                MySqlConnection sqlconn;
-                string connsqlstring = "Server=your.ip.address;Port=3306;database=YOUR_DATA_BASE;User Id=root;Password=password;charset=utf8";
+                string connsqlstring = "Server=mysql8.db4free.net;Port=3307;database=miguelxamarinapp;User Id=adminmiguel123;Password=admin1234@;charset=utf8";
                 sqlconn = new MySqlConnection(connsqlstring);
                 sqlconn.Open();
-                string queryString = "select count(0) from ACCOUNT";
-                MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
-                String result = sqlcmd.ExecuteScalar().ToString();
-                return "conectado";
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                throw new Exception(ex.Message);
             }
         }
         public bool Login(string user, string pass)
         {
-            return true;
+            ConnectionBD();
+            string queryString = "SELECT * FROM Users where name = '" + user + "' and pass = '" + pass + "' and active = 1";
+            MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
+            String result = string.IsNullOrWhiteSpace(sqlcmd.ExecuteScalar().ToString()) ? default(string) : sqlcmd.ExecuteScalar().ToString();
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                sqlconn.Close();
+                return true;
+            }
+            else
+            {
+                sqlconn.Close();
+                return false;
+            }
         }
     }
 }
