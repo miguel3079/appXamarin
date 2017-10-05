@@ -65,9 +65,6 @@
     <Compile Include="Model\database\Connection.cs" />
     <Compile Include="Model\DTOs\userDto.cs" />
     <Compile Include="PerfilActivity.cs" />
-    <Compile Include="Resources\layout\Main.axml">
-      <SubType>Designer</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -79,6 +76,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\layout\Perfil.axml" />
     <AndroidResource Include="Resources\drawable\LogoDroid.png" />
+    <AndroidResource Include="Resources\layout\Login.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{F95B106A-7FA1-494A-895A-3D69BC67F558}|Default">
-  <MonoDevelop.Ide.ItemProperties.appXamarinDroid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar" />
+  <MonoDevelop.Ide.ItemProperties.appXamarinDroid AndroidDesignerPreferredDevice="Nexus 5" PreferredExecutionTarget="Android.Android_Accelerated_x86" AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.TranslucentDecor" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="appXamarinDroid/MainActivity.cs" Line="28" Column="18" />
-      <File FileName="appXamarinDroid/PerfilActivity.cs" Line="1" Column="1" />
+      <File FileName="appXamarinDroid/MainActivity.cs" Line="17" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

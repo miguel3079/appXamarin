@@ -12,9 +12,9 @@ namespace appXamarinDroid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.Login);
+            ActionBar.Hide();
 
             //Initializing button from layout
             Button login = FindViewById<Button>(Resource.Id.login);
