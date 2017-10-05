@@ -59,10 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Model\Connection.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controller\Validations.cs" />
+    <Compile Include="Model\database\Connection.cs" />
+    <Compile Include="Model\DTOs\userDto.cs" />
+    <Compile Include="PerfilActivity.cs" />
+    <Compile Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -71,10 +76,9 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\layout\Perfil.axml" />
+    <AndroidResource Include="Resources\drawable\LogoDroid.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -83,6 +87,8 @@
     <Folder Include="Resources\mipmap-xhdpi\" />
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
+    <Folder Include="Model\database\" />
+    <Folder Include="Model\DTOs\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

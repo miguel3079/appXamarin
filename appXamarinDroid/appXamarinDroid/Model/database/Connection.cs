@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MySql.Data.MySqlClient;
+using appXamarinDroid.Model.DTOs;
 
 namespace appXamarinDroid.Model
 {
@@ -36,6 +37,7 @@ namespace appXamarinDroid.Model
                 throw new Exception(ex.Message);
             }
         }
+
         public bool Login(string user, string pass)
         {
             ConnectionBD();
@@ -53,5 +55,7 @@ namespace appXamarinDroid.Model
                 return false;
             }
         }
+
+       
     }
 }

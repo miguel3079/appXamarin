@@ -41,24 +41,18 @@ namespace appXamarinDroid
 			}
 		}
 		
-		public partial class Id
+		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int login = 2130968578;
+			// aapt resource value: 0x7f020000
+			public const int LogoDroid = 2130837504;
 			
-			// aapt resource value: 0x7f040001
-			public const int password = 2130968577;
-			
-			// aapt resource value: 0x7f040000
-			public const int userName = 2130968576;
-			
-			static Id()
+			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
-			private Id()
+			private Drawable()
 			{
 			}
 		}
@@ -66,8 +60,8 @@ namespace appXamarinDroid
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7f020000
-			public const int Main = 2130837504;
+			// aapt resource value: 0x7f030000
+			public const int Perfil = 2130903040;
 			
 			static Layout()
 			{
@@ -82,8 +76,8 @@ namespace appXamarinDroid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int app_name = 2130903040;
+			// aapt resource value: 0x7f040000
+			public const int app_name = 2130968576;
 			
 			static String()
 			{
