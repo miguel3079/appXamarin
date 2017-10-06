@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using System;
 using appXamarinDroid.Model;
+using Android.Content;
 
 namespace appXamarinDroid
 {
@@ -26,7 +27,9 @@ namespace appXamarinDroid
                 Connection connection = new Connection();
                 if (connection.Login(name.Text, pass.Text))
                 {
-                    Android.Widget.Toast.MakeText(this, "Dentro", Android.Widget.ToastLength.Short).Show();
+                    var activityPerfil = new Intent(this, typeof(Perfil));
+                    activityPerfil.PutExtra("UserName", name.Text);
+                    StartActivity(activityPerfil);
                 }
                 else
                 {

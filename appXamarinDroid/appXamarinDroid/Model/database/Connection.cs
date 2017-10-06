@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using MySql.Data.MySqlClient;
 using appXamarinDroid.Model.DTOs;
 
@@ -41,6 +31,8 @@ namespace appXamarinDroid.Model
         public bool Login(string user, string pass)
         {
             ConnectionBD();
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass)) return false;
+
             string queryString = "SELECT * FROM Users where name = '" + user + "' and pass = '" + pass + "' and active = 1";
             MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
             var result = Convert.IsDBNull(sqlcmd.ExecuteScalar()) ? default(string) : sqlcmd.ExecuteScalar().ToString();
@@ -56,6 +48,25 @@ namespace appXamarinDroid.Model
             }
         }
 
-       
+        public UserDto UserPerfil(string userName)
+        {
+            ConnectionBD();
+            UserDto userDto;
+
+            string queryString = "SELECT * FROM Users where name = '" + userName + "' and active = 1";
+            MySqlCommand sqlcmd = new MySqlCommand(queryString, sqlconn);
+            var result = sqlcmd.ExecuteReader();
+            result.Read();
+            userDto = new UserDto()
+            {
+                Name = result.GetString("name"),
+                Surname = result.GetString("surname"),
+                Pass = result.GetString("pass"),
+                Email = result.GetString("email"),
+                Active = result.GetBoolean("active")
+            };
+
+            return userDto;
+        }
     }
 }
